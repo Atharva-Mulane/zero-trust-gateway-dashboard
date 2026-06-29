@@ -5,7 +5,7 @@ export default function Health() {
   const [health, setHealth] = useState(null);
 
   useEffect(() => {
-    axios.get("http://localhost:9090/actuator/health")
+    axios.get("https://zero-trust-api-gateway-production.up.railway.app/actuator/health")
       .then(res => setHealth(res.data))
       .catch(() => setHealth({ status: "DOWN" }));
   }, []);

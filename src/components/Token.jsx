@@ -29,7 +29,7 @@ export default function Token() {
 
   const testGateway = async () => {
     try {
-      const res = await axios.get("http://localhost:9090/api/test", {
+      const res = await axios.get("https://zero-trust-api-gateway-production.up.railway.app/api/test", {
         headers: { Authorization: `Bearer ${token}` }
       });
       setResponse(res.data);

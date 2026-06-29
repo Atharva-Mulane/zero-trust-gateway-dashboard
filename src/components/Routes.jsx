@@ -5,8 +5,7 @@ export default function Routes() {
   const [routes, setRoutes] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:9090/actuator/gateway/routes")
-      .then(res => setRoutes(res.data))
+    axios.get("https://zero-trust-api-gateway-production.up.railway.app/actuator/gateway/routes")      .then(res => setRoutes(res.data))
       .catch(() => setRoutes([]));
   }, []);
 

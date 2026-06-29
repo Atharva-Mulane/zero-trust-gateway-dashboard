@@ -12,7 +12,7 @@ export default function Metrics() {
 
   useEffect(() => {
     METRICS.forEach(m => {
-      axios.get(`http://localhost:9090/actuator/metrics/${m}`)
+      axios.get(`https://zero-trust-api-gateway-production.up.railway.app/actuator/metrics/${m}`)
         .then(res => setMetrics(prev => ({ ...prev, [m]: res.data })))
         .catch(() => setMetrics(prev => ({ ...prev, [m]: null })));
     });
